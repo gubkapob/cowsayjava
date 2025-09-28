@@ -1,0 +1,7 @@
+services:
+  cowsayjava:
+    build: .
+    container_name: cowsayjava_console
+    stdin_open: true
+    tty: true
+    restart: "no"
