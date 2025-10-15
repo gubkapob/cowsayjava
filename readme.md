@@ -14,7 +14,7 @@ docker attach cowsay_console
 docker-compose run --rm cowsay
 ```
 
-User input: "I love Java"
+User input: "I love Java"  
 And Cow say:
  _____________
 < I love Java >
@@ -25,7 +25,7 @@ And Cow say:
                 ||----w |
                 ||     ||
 
-User input: "exit"
+User input: "exit"  
 And Cow say:
  ______
 \< Bye! \>
@@ -36,6 +36,6 @@ And Cow say:
                 ||----w |
                 ||     ||
 
-User input: empty string input
+User input: empty string input  
 And out: --> Empty line detected <-- Program exiting!
 
