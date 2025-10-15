@@ -2,44 +2,40 @@
 
 My fun project. Applied architectural c4 notation.
 
-Cow say "I love Java". Docker-compose up.
+a) console version
 
+For run application need open terminal and input folow cmd...
+```shell
+docker-compose up -d 
+docker attach cowsay_console
 
-POST /word
+# or
+
+docker-compose run --rm cowsay
+```
+
+User input: "I love Java"
+And Cow say:
+ _____________
 < I love Java >
--------
-       \   ^__^
-        \  (@@)\_______
-           (__)\       )\/\
-               ||----w |
-               ||     ||
+-------------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
 
+User input: "exit"
+And Cow say:
+ ______
+\< Bye! \>
+------
+        \   ^__^
+         \  (oo)\_______
+            (__)\       )\/\
+                ||----w |
+                ||     ||
 
-GET /info  
+User input: empty string input
+And out: --> Empty line detected <-- Program exiting!
 
-< Hello >
--------
-       \   ^__^
-        \  (oo)\_______
-           (__)\       )\/\
-            U ||----w |
-               ||     ||
-
-
- _______________________________________
-/ we:                                   \
-|                                       |
-| The single most important word in the |
-\ world.                                /
- ---------------------------------------
-       \   ^__^
-        \  (oo)\_______
-           (__)\       )\/\
-               ||----w |
-               ||     ||
-
-TODO: dell after!  
-https://opensource.com/article/21/11/linux-cowsay-command  
-https://github.com/VaasuDevanS/cowsay-python/blob/main/cowsay/characters.py
-
-1. 
