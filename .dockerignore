@@ -1,8 +1,6 @@
-**/docker-compose.yml
 **/.gradle
-**/build
+**/.idea
 **/.git
 **/.gitignore
+**/build
 **/*.md
-**/gradle*
-**/settings.gradle

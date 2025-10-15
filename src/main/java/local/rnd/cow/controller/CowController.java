@@ -4,6 +4,7 @@ import local.rnd.cow.model.CowMessageModel;
 import local.rnd.cow.service.CowBubbleServiceImpl;
 import local.rnd.cow.view.CowView;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.ConfigurableApplicationContext;
 import org.springframework.stereotype.Controller;
 
 import java.io.BufferedReader;
@@ -15,6 +16,9 @@ public class CowController {
 
     private final CowBubbleServiceImpl cowBubbleService;
     private final CowView cowView;
+
+    @Autowired
+    private ConfigurableApplicationContext context;
 
     @Autowired
     public CowController(CowBubbleServiceImpl cowBubbleService, CowView cowView) {
@@ -37,13 +41,18 @@ public class CowController {
                 System.out.print("> ");
                 line = reader.readLine();
 
-                if (line == null) {
-                    System.out.println("--> lines eq null <-- Program exiting!");
+                if (line == null || line.isEmpty()) {
+                    System.out.println("--> Empty line detected <-- Program exiting!");
+                    context.close();
                     break;
                 }
 
                 if ("exit".equalsIgnoreCase(line.trim())) {
-                    System.out.println("Bye!");
+                    CowMessageModel message = new CowMessageModel("Bye!");
+                    List<String> wrapped = CowBubbleServiceImpl.wrap(message);
+                    cowView.renderSpeechBubble(wrapped);
+                    cowView.renderAnimal();
+                    context.close();
                     break;
                 }
 

@@ -1,7 +1,7 @@
 services:
-  cowsayjava:
+  cowsay:
     build: .
-    container_name: cowsayjava_console
-    stdin_open: true
-    tty: true
-    restart: "no"
+    container_name: cowsay_console
+    stdin_open: true   # оставить stdin открытым
+    tty: true          # чтобы удобно было вводить строки
+    restart: on-failure

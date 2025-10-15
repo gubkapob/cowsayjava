@@ -9,9 +9,8 @@ version = "0.0.1-SNAPSHOT"
 description = "My fun project with architectural c4 notation"
 
 java {
-    toolchain {
-        languageVersion = JavaLanguageVersion.of(21)
-    }
+    sourceCompatibility = JavaVersion.VERSION_21
+    targetCompatibility = JavaVersion.VERSION_21
 }
 
 repositories {
